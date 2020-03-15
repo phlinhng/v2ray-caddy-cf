@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  caddy:
+    build:
+      context: ./src/caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./src/caddy/caddy:/root/.caddy
+      - ./src/caddy/Caddyfile:/etc/Caddyfile
+      - /etc/localtime:/etc/localtime:ro
+    entrypoint: "caddy --conf /etc/Caddyfile"
+    environment:
+      - ACME_AGREE=true
+    networks:
+      - web
+    restart: unless-stopped
+
+  v2ray:
+    build:
+      context: ./src/v2ray
+    volumes:
+      - ./src/v2ray/config.json:/etc/v2ray/config.json
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - web
+    restart: unless-stopped
+
+networks:
+  web:

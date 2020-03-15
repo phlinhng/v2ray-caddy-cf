@@ -1,0 +1,8 @@
+mydomain.com {
+    gzip
+    timeouts none
+    proxy /onlinegame v2ray:35666 {
+        without /onlinegame
+        websocket
+    }
+}

@@ -2,8 +2,10 @@ version: "3"
 
 services:
   caddy:
+    image: abiosoft/caddy
     build:
-      context: ./src/caddy
+      args:
+        - plugins=tls.dns.cloudflare
     ports:
       - "80:80"
       - "443:443"
@@ -11,16 +13,16 @@ services:
       - ./src/caddy/caddy:/root/.caddy
       - ./src/caddy/Caddyfile:/etc/Caddyfile
       - /etc/localtime:/etc/localtime:ro
-    entrypoint: "caddy --conf /etc/Caddyfile"
     environment:
       - ACME_AGREE=true
+      - CLOUDFLARE_EMAIL=xxx@yourmail.com
+      - CLOUDFLARE_API_KEY=yourkey
     networks:
       - web
     restart: unless-stopped
 
   v2ray:
-    build:
-      context: ./src/v2ray
+    image: v2fly/v2fly-core:latest
     volumes:
       - ./src/v2ray/config.json:/etc/v2ray/config.json
       - /etc/localtime:/etc/localtime:ro

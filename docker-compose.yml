@@ -15,6 +15,7 @@ services:
       - ACME_AGREE=true
       - CLOUDFLARE_EMAIL=xxx@yourmail.com
       - CLOUDFLARE_API_KEY=yourkey
+    entrypoint: "caddy --conf /etc/Caddyfile"
     networks:
       - web
     restart: unless-stopped

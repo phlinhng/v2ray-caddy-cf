@@ -15,6 +15,10 @@
           "network": "ws",
           "security": "none"
         },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [ "http", "tls" ]
+        },
         "listen": "0.0.0.0"
       }
     ],
@@ -49,7 +53,18 @@
         }
       ]
     },
-    "policy": {},
-    "reverse": {},
-    "transport": {}
+    "dns": {
+      "servers": [
+          "1.1.1.1",
+          "1.0.0.1",
+          "8.8.8.8",
+          "8.8.4.4",
+          {
+            "address": "114.114.114.114",
+            "port": 53,
+            "domains": ["geosite:cn"]
+          },
+          "localhost"
+      ]
+    }
   }

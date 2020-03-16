@@ -5,4 +5,7 @@ mydomain.com {
         without /onlinegame
         websocket
     }
+    tls {
+        dns cloudflare
+    }
 }

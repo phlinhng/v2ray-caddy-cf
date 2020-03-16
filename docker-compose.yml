@@ -2,10 +2,8 @@ version: "3"
 
 services:
   caddy:
-    image: abiosoft/caddy
     build:
-      args:
-        - plugins=tls.dns.cloudflare
+      context: ./src/caddy
     ports:
       - "80:80"
       - "443:443"

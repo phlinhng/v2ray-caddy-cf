@@ -1,68 +1,65 @@
 {
-    "inbounds": [
-      {
-        "port": 35666,
-        "protocol": "vmess",
-        "settings": {
-          "clients": [
-            {
-              "id": "202eddbc-3d73-448c-be22-9218e6f8f999",
-              "alterId": 36
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "ws",
-          "security": "none"
-        },
-        "sniffing": {
-          "enabled": true,
-          "destOverride": [ "http", "tls" ]
-        },
-        "listen": "0.0.0.0"
+  "inbounds": [
+    {
+      "port": 35666,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "202eddbc-3d73-448c-be22-9218e6f8f999",
+            "alterId": 36
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none"
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [ "http", "tls" ]
+      },
+      "listen": "0.0.0.0"
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
       }
-    ],
-    "outbounds": [
+    },
+    {
+      "tag": "blocked",
+      "protocol": "blackhole",
+      "settings": {}
+    }
+  ],
+  "routing": {
+    "domainStrategy": "IPOnDemand",
+    "rules": [
       {
-        "tag": "direct",
-        "protocol": "freedom",
-        "settings": {
-          "domainStrategy": "UseIP"
-        }
+        "type": "field",
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "blocked"
       },
       {
-        "tag": "blocked",
-        "protocol": "blackhole",
-        "settings": {}
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
       }
-    ],
-    "routing": {
-      "domainStrategy": "IPOnDemand",
-      "rules": [
-        {
-          "type": "field",
-          "ip": [
-            "geoip:private"
-          ],
-          "outboundTag": "blocked"
-        },
-        {
-          "type": "field",
-          "protocol": [
-            "bittorrent"
-          ],
-          "outboundTag": "blocked"
-        }
-      ]
-    },
-    "dns": {
-      "servers": [
-          "https+local://1.1.1.1/dns-query",
-          "1.1.1.1",
-          "1.0.0.1",
-          "8.8.8.8",
-          "8.8.4.4",
-          "localhost"
-      ]
-    }
+    ]
+  },
+  "dns": {
+    "servers": [
+        "https+local://1.1.1.1/dns-query",
+        "https://dns.google/dns-query",
+        "localhost"
+    ]
   }
+}

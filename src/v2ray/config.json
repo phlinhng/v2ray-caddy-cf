@@ -17,7 +17,7 @@
       },
       "sniffing": {
         "enabled": true,
-        "destOverride": [ "tls", "http" ]
+        "destOverride": [ "http", "tls" ]
       },
       "listen": "0.0.0.0"
     }

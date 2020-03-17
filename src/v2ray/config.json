@@ -15,10 +15,6 @@
         "network": "ws",
         "security": "none"
       },
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [ "http", "tls" ]
-      },
       "listen": "0.0.0.0"
     }
   ],
@@ -26,9 +22,7 @@
     {
       "tag": "direct",
       "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
-      }
+      "settings": {s}
     },
     {
       "tag": "blocked",
@@ -53,13 +47,6 @@
         ],
         "outboundTag": "blocked"
       }
-    ]
-  },
-  "dns": {
-    "servers": [
-        "https+local://1.1.1.1/dns-query",
-        "https+local://dns.google/dns-query",
-        "localhost"
     ]
   }
 }

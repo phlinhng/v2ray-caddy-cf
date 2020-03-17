@@ -26,7 +26,7 @@
     {
       "tag": "direct",
       "protocol": "freedom",
-      "settings": {s}
+      "settings": {}
     },
     {
       "tag": "blocked",

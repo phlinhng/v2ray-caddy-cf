@@ -42,10 +42,6 @@
         "ip": [
           "geoip:private"
         ],
-        "outboundTag": "blocked"
-      },
-      {
-        "type": "field",
         "protocol": [
           "bittorrent"
         ],

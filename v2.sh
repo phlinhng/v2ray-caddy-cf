@@ -1,6 +1,7 @@
 #!/bin/bash
 
 apt-get install curl git uuid-runtime -y
+rm -rf docker-v2ray-caddy-cf
 git clone https://github.com/phlinhng/docker-v2ray-caddy-cf.git
 curl -sSL https://get.docker.com/ | sh
 curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose

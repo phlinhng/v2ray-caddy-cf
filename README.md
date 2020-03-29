@@ -1,26 +1,37 @@
-## Install Docker & docker-compose
+# v2Ray Caddy Cloudflare 一键脚本
+利用`docker`实现的v2Ray一键脚本，集成Cloudflare API，无需手动点灰云朵也能自动获取证书。
+
+# 用法
 ```sh
-sudo curl -sSL https://get.docker.com/ | sh
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
-sudo systemctl enable docker.service
+sudo wget https://raw.githubusercontent.com/phlinhng/docker-caddy-v2ray-cf/master/v2.sh && chmod +x v2.sh && ./v2.sh
 ```
-## Install BBRPlus Kernel
+适用ubuntu, debian系统
+
+# 配置示范
+執行脚本后需要输入以下信息
+```sh
+解析到本VPS的域名: www.yourdomain.com
+v2Ray ws路径: /yourpath
+Cloudflare Email: johndoe@gmail.com
+Cloudflare API KEY: a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3
+```
+安装成功后会显示如下的配置信息 (UUID为随机生成，每次皆不同)
+```sh
+Address: www.yourdomain.com
+Port: 443
+UUID: 13FB0A64-3BC8-4574-8D49-7121B04BDE83
+Type: websocket
+Hostname: www.yourdomain.com
+Path: /yourpath
+```
+
+# 注意事项
+由于作者刚开始学脚本写法，没设置数值检查，请确保配置信息填写正确。
+
+# 安装 BBR四合一加速脚本
 ```sh
 sudo wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
 ```
 
-## Build containers
-```sh
-git clone https://github.com/phlinhng/docker-caddy-v2ray.git
-cd docker-caddy-v2ray/
-vi docker-compose.yml
-vi ./src/caddy/Caddyfile
-vi ./src/v2ray/config.json
-sudo docker-compose up --build
-```
 
-## Variables
-+ `docker-compose.yml`: change `CLOUDFLARE_EMAIL` and `CLOUDFLARE_API_KEY` to your own
-+ `./src/caddy/Caddyfile`: rename domain to your own domain (make sure your domain is resolved to your VPS IP)
-+ `./src/v2ray/config.json`: modified whatever you prefer
 

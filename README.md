@@ -3,7 +3,7 @@
 
 # 用法
 ```sh
-sudo wget https://raw.githubusercontent.com/phlinhng/docker-v2ray-caddy-cf/master/v2.sh && chmod +x v2.sh && ./v2.sh
+wget https://raw.githubusercontent.com/phlinhng/docker-v2ray-caddy-cf/master/v2.sh && chmod +x v2.sh && ./v2.sh
 ```
 适用ubuntu, debian系统
 

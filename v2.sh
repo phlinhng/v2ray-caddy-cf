@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#git clone
+git clone https://github.com/phlinhng/docker-caddy-v2ray-cf.git
 echo "安装docker"
 #curl -sSL https://get.docker.com/ | sh
 echo "安装docker-compose"

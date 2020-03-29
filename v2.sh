@@ -22,13 +22,20 @@ sed -i "" "s/FAKEKEY/$cfapikey/g" docker-compose.yml
 
 docker-compose up --build -d
 
+json={"add":"${domain}","aid":"36","host":"${domain}","id":"${uuid}","net":"ws","path":"/${path}","port":"443","ps":"${domain}:443","tls":"tls","type":"none","v":"2"}
+
+uri="$(echo "${json}" | base64)"
+echo "vmess://${uri}"
+
 echo ""
-echo "Address: $domain"
+echo "Address: ${domain}"
 echo "Port: 443"
-echo "UUID: $uuid"
+echo "UUID: ${uuid}"
 echo "Alter ID: 36"
 echo "Type: websocket"
-echo "Hostname: $domain"
-echo "Path: /$path"
+echo "Hostname: ${domain}"
+echo "Path: /${path}"
+echo ""
+
 
 exit 0

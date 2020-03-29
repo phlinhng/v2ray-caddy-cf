@@ -6,7 +6,7 @@ curl -sSL https://get.docker.com/ | sh
 curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
-cd docker-caddy-v2ray-cf
+cd docker-v2ray-caddy-cf
 
 read -p "解析到本VPS的域名: " domain
 read -p "v2Ray ws路径: " path

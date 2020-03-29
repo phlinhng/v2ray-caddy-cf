@@ -1,8 +1,8 @@
-mydomain.com {
+FAKEDOMAIN {
     gzip
     timeouts none
-    proxy /onlinegame v2ray:35666 {
-        without /onlinegame
+    proxy /FAKEPATH v2ray:35666 {
+        without /FAKEPATH
         websocket
     }
     tls {

@@ -13,8 +13,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
     environment:
       - ACME_AGREE=true
-      - CLOUDFLARE_EMAIL=xxx@yourmail.com
-      - CLOUDFLARE_API_KEY=yourkey
+      - CLOUDFLARE_EMAIL=FAKEEMAIL
+      - CLOUDFLARE_API_KEY=FAKEKEY
     entrypoint: "caddy --conf /etc/Caddyfile"
     networks:
       - web

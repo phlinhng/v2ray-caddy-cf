@@ -24,6 +24,8 @@ Alter ID: 36
 Type: websocket
 Hostname: www.yourdomain.com
 Path: /yourpath
+
+vmess://eyJhZGQiOiJjaG9uZ3FpbmcubnRodXNjaWVuY2UueHl6IiwiYWlkIjoiMzYiLCJob3N0IjoiY2hvbmdxaW5nLm50aHVzY2llbmNlLnh5eiIsImlkIjoiMmNmNWI4NGUtYjI5MC00NDEyLTgzMzMtNWJkNGIwOTBlZmY4IiwibmV0Ijoid3MiLCJwYXRoIjoiL29ubGluZSIsInBvcnQiOiI0NDMiLCJwcyI6IlRPS1lPX0dDUCIsInRscyI6InRscyIsInR5cGUiOiJub25lIiwidiI6IjIifQo=
 ```
 
 # 注意事项

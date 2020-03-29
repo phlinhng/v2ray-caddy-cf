@@ -10,16 +10,16 @@ read -p "v2Ray ws路径: " path
 read -p "Cloudflare Email: " cfemail
 read -p "Cloudflare API KEY: " cfapikey
 
-cd ~
 rm -rf docker-v2ray-caddy-cf
 git clone https://github.com/phlinhng/docker-v2ray-caddy-cf.git
+cd docker-v2ray-caddy-cf
 
 uuid=$(uuidgen)
-sed -i "" "s/FAKEUUID/$uuid/g" ~/docker-v2ray-caddy-cf/src/v2ray/config.json
-sed -i "" "s/FAKEDOMAIN/$domain/g" ~/docker-v2ray-caddy-cf/src/caddy/Caddyfile
-sed -i "" "s/FAKEPATH/$path/g" ~/docker-v2ray-caddy-cf/src/caddy/Caddyfile
-sed -i "" "s/FAKEEMAIL/$cfemail/g" ~/docker-v2ray-caddy-cf/docker-compose.yml
-sed -i "" "s/FAKEKEY/$cfapikey/g" ~/docker-v2ray-caddy-cf/docker-compose.yml
+sed -i "s/FAKEUUID/$uuid/g" ./src/v2ray/config.json
+sed -i "s/FAKEDOMAIN/$domain/g" ./src/caddy/Caddyfile
+sed -i "s/FAKEPATH/$path/g" ./src/caddy/Caddyfile
+sed -i "s/FAKEEMAIL/$cfemail/g" docker-compose.yml
+sed -i "s/FAKEKEY/$cfapikey/g" docker-compose.yml
 
 docker-compose up --build -d
 

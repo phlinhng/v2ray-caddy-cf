@@ -1,13 +1,11 @@
 #!/bin/bash
 
 git clone https://github.com/phlinhng/docker-caddy-v2ray-cf.git
-echo "安装docker"
 #curl -sSL https://get.docker.com/ | sh
-echo "安装docker-compose"
 #sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 #sudo chmod +x /usr/local/bin/docker-compose
 
-#cd docker-caddy-v2ray-cf
+cd docker-caddy-v2ray-cf
 
 read -p "解析到本VPS的域名: " domain
 read -p "v2Ray ws路径: " path

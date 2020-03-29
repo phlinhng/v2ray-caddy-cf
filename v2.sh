@@ -1,25 +1,25 @@
 #!/bin/bash
 
 apt-get install curl git uuid-runtime -y
-rm -rf docker-v2ray-caddy-cf
-git clone https://github.com/phlinhng/docker-v2ray-caddy-cf.git
 curl -sSL https://get.docker.com/ | sh
 curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
-
-cd docker-v2ray-caddy-cf
 
 read -p "解析到本VPS的域名: " domain
 read -p "v2Ray ws路径: " path
 read -p "Cloudflare Email: " cfemail
 read -p "Cloudflare API KEY: " cfapikey
 
+cd ~
+rm -rf docker-v2ray-caddy-cf
+git clone https://github.com/phlinhng/docker-v2ray-caddy-cf.git
+
 uuid=$(uuidgen)
-sed -i "" "s/FAKEUUID/$uuid/g" ./src/v2ray/config.json
-sed -i "" "s/FAKEDOMAIN/$domain/g" ./src/caddy/Caddyfile
-sed -i "" "s/FAKEPATH/$path/g" ./src/caddy/Caddyfile
-sed -i "" "s/FAKEEMAIL/$cfemail/g" docker-compose.yml
-sed -i "" "s/FAKEKEY/$cfapikey/g" docker-compose.yml
+sed -i "" "s/FAKEUUID/$uuid/g" ~/docker-v2ray-caddy-cf/src/v2ray/config.json
+sed -i "" "s/FAKEDOMAIN/$domain/g" ~/docker-v2ray-caddy-cf/src/caddy/Caddyfile
+sed -i "" "s/FAKEPATH/$path/g" ~/docker-v2ray-caddy-cf/src/caddy/Caddyfile
+sed -i "" "s/FAKEEMAIL/$cfemail/g" ~/docker-v2ray-caddy-cf/docker-compose.yml
+sed -i "" "s/FAKEKEY/$cfapikey/g" ~/docker-v2ray-caddy-cf/docker-compose.yml
 
 docker-compose up --build -d
 

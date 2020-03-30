@@ -1,6 +1,5 @@
 FAKEDOMAIN {
     gzip
-    timeouts none
     proxy / www.lse.ac.uk
     proxy /FAKEPATH v2ray:35666 {
         without /FAKEPATH
@@ -8,5 +7,8 @@ FAKEDOMAIN {
     }
     tls {
         dns cloudflare
+    }
+    timeouts {
+        idle 5m
     }
 }

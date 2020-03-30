@@ -23,7 +23,7 @@ echo ""
 echo "Address: ${V2_DOMAIN}"
 echo "Port: 443"
 echo "UUID: ${uuid}"
-echo "Alter ID: 36"
+echo "Alter ID: 6"
 echo "Type: websocket"
 echo "Hostname: ${V2_DOMAIN}"
 echo "Path: /${V2_DOMAIN}"
@@ -33,6 +33,5 @@ json="{\"add\":\"${V2_DOMAIN}\",\"aid\":\"36\",\"host\":\"${V2_DOMAIN}\",\"id\":
 
 uri="$(echo "${json}" | base64)"
 echo "vmess://${uri}"
-
 
 exit 0

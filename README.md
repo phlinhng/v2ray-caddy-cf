@@ -10,12 +10,12 @@ vi .env
 适用ubuntu, debian系统
 
 # 配置示范
-執行脚本后需要输入以下信息
-```sh
-解析到本VPS的域名: www.yourdomain.com
-v2Ray ws路径: /yourpath
-Cloudflare Email: johndoe@gmail.com
-Cloudflare API KEY: a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3
+编辑`.env`修改以下信息
+```s
+V2_DOMAIN=www.yourdomain.com
+V2_PATH=yourpath
+CF_EMAIL=johndoe@gmail.com
+CF_APIKEY=a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3
 ```
 安装成功后会显示如下的配置信息 (UUID为随机生成，每次皆不同；Alter ID默认为6)
 ```sh

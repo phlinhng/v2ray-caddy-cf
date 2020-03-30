@@ -26,12 +26,12 @@ sed -i "s/FAKEAPIKEY/${CF_APIKEY}/g" caddy.service
 
 groupadd --system caddy
 useradd --system \
-           --gid caddy \
-           --create-home \
-           --home-dir /var/lib/caddy \
-           --shell /usr/sbin/nologin \
-           --comment "Caddy web server" \
-           caddy
+        --gid caddy \
+        --create-home \
+        --home-dir /var/lib/caddy \
+        --shell /usr/sbin/nologin \
+        --comment "Caddy web server" \
+        caddy
 
 /bin/cp -f config.json /etc/v2ray
 mkdir -p /etc/caddy
@@ -46,7 +46,6 @@ systemctl start v2ray
 
 systemctl enable caddy.service
 systemctl start caddy.service
-
 
 echo ""
 echo "Address: ${V2_DOMAIN}"

@@ -2,7 +2,7 @@
 
 if [[ $(/usr/bin/id -u) -ne 0 ]]; then
     echo "请使用root用户或sudo指令執行"
-    exit
+    exit 2
 fi
 
 apt-get install curl -y

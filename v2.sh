@@ -18,6 +18,7 @@ read -p "Cloudflare API KEY: " cfapikey
 rm -rf docker-v2ray-caddy-cf
 git clone https://github.com/phlinhng/docker-v2ray-caddy-cf.git
 cd docker-v2ray-caddy-cf
+git checkout docker
 
 uuid=$(uuidgen)
 sed -i "s/FAKEUUID/$uuid/g" ./src/v2ray/config.json
@@ -42,6 +43,5 @@ json="{\"add\":\"${domain}\",\"aid\":\"36\",\"host\":\"${domain}\",\"id\":\"${uu
 
 uri="$(echo "${json}" | base64)"
 echo "vmess://${uri}"
-
 
 exit 0

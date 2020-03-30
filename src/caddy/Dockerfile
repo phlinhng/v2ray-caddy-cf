@@ -16,4 +16,4 @@ RUN curl --silent --show-error --fail --location --header "Accept: application/t
 COPY Caddyfile /etc/Caddyfile
 
 ENTRYPOINT ["/usr/bin/caddy"]
-CMD ["--conf", "/etc/Caddyfile"]
+CMD ["-conf", "/etc/Caddyfile", "-quic"]

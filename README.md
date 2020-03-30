@@ -1,9 +1,11 @@
-# v2Ray Caddy Cloudflare 一键脚本
+# v2Ray Caddy Cloudflare 一键脚本 (env版)
 利用`docker`实现的v2Ray一键脚本，集成Cloudflare API，无需手动点灰云朵也能自动获取证书。
 
 # 用法
 ```sh
-wget https://raw.githubusercontent.com/phlinhng/docker-v2ray-caddy-cf/master/v2.sh && chmod +x v2.sh && ./v2.sh
+wget https://raw.githubusercontent.com/phlinhng/docker-v2ray-caddy-cf/env/v2.sh && chmod +x v2.sh
+vi .env
+./v2.sh
 ```
 适用ubuntu, debian系统
 

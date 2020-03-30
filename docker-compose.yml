@@ -15,7 +15,6 @@ services:
       - ACME_AGREE=true
       - CLOUDFLARE_EMAIL=FAKEEMAIL
       - CLOUDFLARE_API_KEY=FAKEKEY
-    entrypoint: "caddy --conf /etc/Caddyfile"
     networks:
       - web
     restart: always

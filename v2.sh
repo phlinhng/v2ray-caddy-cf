@@ -5,7 +5,7 @@ if [[ $(/usr/bin/id -u) -ne 0 ]]; then
     exit 2
 fi
 
-apt-get install curl -y
+apt-get install curl uuid-runtime coreutils -y
 # install v2ray
 bash <(curl -L -s https://install.direct/go.sh)
 

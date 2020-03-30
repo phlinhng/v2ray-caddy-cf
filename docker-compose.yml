@@ -3,13 +3,14 @@ version: "3"
 services:
   caddy:
     build:
-      context: ./src/caddy
+      context: .
+      dockerfile: Dockerfile-caddy
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./src/caddy/.caddy:/root/.caddy
-      - ./src/caddy/Caddyfile:/etc/Caddyfile
+      - ./.caddy:/root/.caddy
+      - ./Caddyfile:/etc/Caddyfile
       - /etc/localtime:/etc/localtime:ro
     environment:
       - ACME_AGREE=true
@@ -23,7 +24,7 @@ services:
   v2ray:
     image: v2fly/v2fly-core:latest
     volumes:
-      - ./src/v2ray/config.json:/etc/v2ray/config.json
+      - ./config.json:/etc/v2ray/config.json
       - /etc/localtime:/etc/localtime:ro
     networks:
       - web

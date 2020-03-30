@@ -13,6 +13,8 @@ chmod +x /usr/local/bin/docker-compose
 rm -rf docker-v2ray-caddy-cf
 git clone https://github.com/phlinhng/docker-v2ray-caddy-cf.git
 cd docker-v2ray-caddy-cf
+git checkout env
+export $(xargs <.env)
 
 uuid=$(uuidgen)
 sed -i "s/FAKEUUID/$uuid/g" ./src/v2ray/config.json
@@ -26,7 +28,7 @@ echo "UUID: ${uuid}"
 echo "Alter ID: 6"
 echo "Type: websocket"
 echo "Hostname: ${V2_DOMAIN}"
-echo "Path: /${V2_DOMAIN}"
+echo "Path: /${V2_PATH}"
 echo ""
 
 json="{\"add\":\"${V2_DOMAIN}\",\"aid\":\"36\",\"host\":\"${V2_DOMAIN}\",\"id\":\"${uuid}\",\"net\":\"ws\",\"path\":\"/${V2_PATH}\",\"port\":\"443\",\"ps\":\"${V2_DOMAIN}:443\",\"tls\":\"tls\",\"type\":\"none\",\"v\":\"2\"}"

@@ -1,8 +1,8 @@
-${V2_DOMAIN} {
+{$V2_DOMAIN} {
     gzip
     proxy / www.lse.ac.uk
-    proxy /${V2_PATH} v2ray:35666 {
-        without /${V2_PATH}
+    proxy /{$V2_PATH} v2ray:35666 {
+        without /{$V2_PATH}
         websocket
     }
     tls {

@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ $(/usr/bin/id -u) -ne 0 ]]; then
+    echo "请使用root用户或sudo指令執行"
+    exit
+fi
+
 apt-get install curl git uuid-runtime -y
 curl -sSL https://get.docker.com/ | sh
 curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose

@@ -31,7 +31,7 @@ vmess://eyJhZGQiOiJhYmMuY29tIiwiYWlkIjoiMzYiLCJob3N0IjoiYWJjLmNvbSIsImlkIjoiRDA0
 # 修改配置重新启动
 若配置填写错误造成服务异常，可以手动修改以下档案的配置后重新启动
 + 域名,路径 : `v2ray-caddy-cf/src/caddy/Caddyfile`
-+ Cloudflare Email, Cloudflare API Key: `v2ray-caddy-cf/docker-compose.yml`
++ Cloudflare Email, Cloudflare API Key: `v2ray-caddy-cf/docker-compose.yml`    
 修改后执行`sudo docker-compose up --build`重启
 
 # 安装 BBR四合一加速脚本

@@ -86,6 +86,6 @@ echo ""
 json="{\"add\":\"${V2_DOMAIN}\",\"aid\":\"36\",\"host\":\"${V2_DOMAIN}\",\"id\":\"${uuid}\",\"net\":\"ws\",\"path\":\"/${V2_PATH}\",\"port\":\"443\",\"ps\":\"${V2_DOMAIN}:443\",\"tls\":\"tls\",\"type\":\"none\",\"v\":\"2\"}"
 
 uri="$(echo "${json}" | base64)"
-echo "vmess://${uri}"
+echo -n "vmess://${uri}"
 
 exit 0

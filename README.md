@@ -6,18 +6,13 @@
 # 用法
 ```sh
 wget https://raw.githubusercontent.com/phlinhng/v2ray-caddy-cf/env/v2.sh && chmod +x v2.sh
-vi .env
-./v2.sh
+./v2.sh [domain] [path] [cloudflare email] [cloudflare api key]
 ```
 适用ubuntu, debian系统
 
-# 配置示范
-编辑`.env`修改以下信息
-```s
-V2_DOMAIN=www.yourdomain.com
-V2_PATH=yourpath
-CF_EMAIL=johndoe@gmail.com
-CF_APIKEY=a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3
+# 示范
+```sh
+./v2.sh "www.yourdomain.com" "yourpath" "johndoe@gmail.com" "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
 ```
 安装成功后会显示如下的配置信息 (UUID为随机生成，每次皆不同；Alter ID默认为6)
 ```sh

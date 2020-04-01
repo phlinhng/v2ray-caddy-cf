@@ -7,7 +7,7 @@
 ```sh
 wget -N --no-check-certificate https://raw.githubusercontent.com/phlinhng/v2ray-caddy-cf/master/v2.sh \
 && chmod +x v2.sh \
-&&./v2.sh [domain] [path] [cloudflare email] [cloudflare api key]
+&& ./v2.sh [domain] [path] [cloudflare email] [cloudflare api key]
 ```
 适用ubuntu, debian系统
 

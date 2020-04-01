@@ -10,7 +10,7 @@ V2_PATH=$2
 CF_EMAIL=$3
 CF_APIKEY=$4
 
-apt-get install curl uuid-runtime coreutils git -y
+apt-get install curl git uuid-runtime coreutils libcap2-bin -y
 
 # install v2ray
 bash <(curl -L -s https://install.direct/go.sh)

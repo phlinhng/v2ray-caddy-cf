@@ -29,7 +29,7 @@ vmess://eyJhZGQiOiJhYmMuY29tIiwiYWlkIjoiMzYiLCJob3N0IjoiYWJjLmNvbSIsImlkIjoiRDA0
 ```
 
 # 注意事项
-由于作者刚开始学脚本写法，没设置数值检查，请确保配置信息填写正确。
+请确保配置信息填写正确。
 
 # 安装 BBR四合一加速脚本
 ```sh

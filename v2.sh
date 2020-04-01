@@ -64,11 +64,14 @@ chmod 644 /etc/systemd/system/caddy.service
 
 systemctl daemon-reload
 
+systemctl enable ntp
+systemctl start ntp
+
 systemctl enable v2ray
 systemctl start v2ray
 
-systemctl enable caddy.service
-systemctl start caddy.service
+systemctl enable caddy
+systemctl start caddy
 
 cd ..
 rm -rf docker-v2ray-caddy-cf

@@ -29,7 +29,10 @@ sed -i "s/FAKEPATH/${V2_PATH}/g" Caddyfile
 sed -i "s/FAKEEMAIL/${CF_EMAIL}/g" caddy.service
 sed -i "s/FAKEAPIKEY/${CF_APIKEY}/g" caddy.service
 
-# create user for  caddy
+# Give the caddy binary the ability to bind to privileged ports (e.g. 80, 443) as a non-root user
+setcap 'cap_net_bind_service=+ep' /usr/local/bin/caddy
+
+# create user for caddy
 groupadd -g 33 www-data
 useradd -g www-data --no-user-group \
   --home-dir /var/www --no-create-home \

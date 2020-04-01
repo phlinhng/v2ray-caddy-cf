@@ -5,6 +5,11 @@ if [[ $(/usr/bin/id -u) -ne 0 ]]; then
     exit 2
 fi
 
+V2_DOMAIN=$1
+V2_PATH=$2
+CF_EMAIL=$3
+CF_APIKEY=$4
+
 apt-get install curl uuid-runtime coreutils -y
 
 # install v2ray
@@ -15,8 +20,7 @@ curl https://getcaddy.com | bash -s personal tls.dns.cloudflare
 
 rm -rf docker-v2ray-caddy-cf
 git clone https://github.com/phlinhng/docker-v2ray-caddy-cf.git
-cd docker-v2ray-caddy-cf && git checkout env
-export $(xargs <.env)
+cd docker-v2ray-caddy-cf
 
 uuid=$(uuidgen)
 sed -i "s/FAKEUUID/${uuid}/g" config.json
@@ -47,6 +51,9 @@ systemctl start v2ray
 
 systemctl enable caddy.service
 systemctl start caddy.service
+
+cd ..
+rm -rf docker-v2ray-caddy-cf
 
 echo ""
 echo "Address: ${V2_DOMAIN}"

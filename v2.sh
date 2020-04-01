@@ -29,7 +29,7 @@ sed -i "s/FAKEPATH/${V2_PATH}/g" Caddyfile
 sed -i "s/FAKEEMAIL/${CF_EMAIL}/g" caddy.service
 sed -i "s/FAKEAPIKEY/${CF_APIKEY}/g" caddy.service
 
-# creating user for  caddy
+# create user for  caddy
 groupadd -g 33 www-data
 useradd -g www-data --no-user-group \
   --home-dir /var/www --no-create-home \
@@ -55,6 +55,9 @@ chmod 644 /etc/caddy/Caddyfile
 
 /bin/cp caddy.service /etc/systemd/system/caddy.service
 chown root:root /etc/systemd/system/caddy.service
+chmod 644 /etc/systemd/system/caddy.service
+
+systemctl daemon-reload
 
 systemctl enable v2ray
 systemctl start v2ray

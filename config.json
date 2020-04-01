@@ -19,7 +19,7 @@
         "enabled": true,
         "destOverride": [ "http", "tls" ]
       },
-      "listen": "0.0.0.0"
+      "listen": "127.0.0.1"
     }
   ],
   "outbounds": [

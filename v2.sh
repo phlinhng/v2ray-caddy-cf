@@ -29,22 +29,32 @@ sed -i "s/FAKEPATH/${V2_PATH}/g" Caddyfile
 sed -i "s/FAKEEMAIL/${CF_EMAIL}/g" caddy.service
 sed -i "s/FAKEAPIKEY/${CF_APIKEY}/g" caddy.service
 
-groupadd --system caddy
-useradd --system \
-        --gid caddy \
-        --create-home \
-        --home-dir /var/lib/caddy \
-        --shell /usr/sbin/nologin \
-        --comment "Caddy web server" \
-        caddy
+# creating user for  caddy
+groupadd -g 33 www-data
+useradd -g www-data --no-user-group \
+  --home-dir /var/www --no-create-home \
+  --shell /usr/sbin/nologin \
+  --system --uid 33 www-data
+  
+mkdir /var/www
+chown www-data:www-data /var/www
+chmod 555 /var/www
 
 /bin/cp -f config.json /etc/v2ray
+
 mkdir -p /etc/caddy
-chown -R caddy:caddy /etc/caddy
+chown -R root:root /etc/caddy
+
 mkdir -p /etc/ssl/caddy
-chown -R caddy:caddy /etc/ssl/caddy
+chown -R root:www-data /etc/ssl/caddy
+chmod 0770 /etc/ssl/caddy
+
 /bin/cp Caddyfile /etc/caddy/Caddyfile
-/bin/cp caddy.service /etc/systemd/system
+chown root:root /etc/caddy/Caddyfile
+chmod 644 /etc/caddy/Caddyfile
+
+/bin/cp caddy.service /etc/systemd/system/caddy.service
+chown root:root /etc/systemd/system/caddy.service
 
 systemctl enable v2ray
 systemctl start v2ray

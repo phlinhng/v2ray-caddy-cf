@@ -51,6 +51,8 @@ chown -R root:root /etc/caddy
 mkdir -p /etc/ssl/caddy
 chown -R root:www-data /etc/ssl/caddy
 chmod 0770 /etc/ssl/caddy
+# to prevent problem from restarting caddy
+rm -rf /etc/ssl/caddy/*
 
 /bin/cp Caddyfile /etc/caddy/Caddyfile
 chown root:root /etc/caddy/Caddyfile

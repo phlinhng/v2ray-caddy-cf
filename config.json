@@ -39,12 +39,16 @@
     "rules": [
       {
         "type": "field",
-        "domain": [
-          "geosite:private"
-        ],
         "ip": [
           "geoip:private"
         ],
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
+      },
+      {
+        "type": "field",
         "protocol": [
           "bittorrent"
         ],

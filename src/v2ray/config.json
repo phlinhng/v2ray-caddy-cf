@@ -35,13 +35,20 @@
     }
   ],
   "routing": {
-    "domainStrategy": "IPOnDemand",
+    "domainStrategy": "AsIs",
     "rules": [
       {
         "type": "field",
         "ip": [
           "geoip:private"
         ],
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
+      },
+      {
+        "type": "field",
         "protocol": [
           "bittorrent"
         ],

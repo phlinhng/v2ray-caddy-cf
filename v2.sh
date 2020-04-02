@@ -86,7 +86,7 @@ echo "Hostname: ${V2_DOMAIN}"
 echo "Path: /${V2_PATH}"
 echo ""
 
-json="{\"add\":\"${V2_DOMAIN}\",\"aid\":\"36\",\"host\":\"${V2_DOMAIN}\",\"id\":\"${uuid}\",\"net\":\"ws\",\"path\":\"/${V2_PATH}\",\"port\":\"443\",\"ps\":\"${V2_DOMAIN}:443\",\"tls\":\"tls\",\"type\":\"none\",\"v\":\"2\"}"
+json="{\"add\":\"${V2_DOMAIN}\",\"aid\":\"6\",\"host\":\"${V2_DOMAIN}\",\"id\":\"${uuid}\",\"net\":\"ws\",\"path\":\"/${V2_PATH}\",\"port\":\"443\",\"ps\":\"${V2_DOMAIN}:443\",\"tls\":\"tls\",\"type\":\"none\",\"v\":\"2\"}"
 
 uri="$(echo "${json}" | base64)"
 echo -n "vmess://${uri}"

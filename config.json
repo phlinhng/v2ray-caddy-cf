@@ -39,6 +39,9 @@
     "rules": [
       {
         "type": "field",
+        "domain": [
+          "geosite:private"
+        ],
         "ip": [
           "geoip:private"
         ],

@@ -20,7 +20,7 @@ curl https://getcaddy.com | bash -s personal tls.dns.cloudflare
 
 rm -rf docker-v2ray-caddy-cf
 git clone https://github.com/phlinhng/v2ray-caddy-cf.git
-cd docker-v2ray-caddy-cf
+cd v2ray-caddy-cf
 
 uuid=$(uuidgen)
 sed -i "s/FAKEUUID/${uuid}/g" config.json

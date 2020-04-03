@@ -6,9 +6,7 @@
 # 用法
 ## 初次安装
 ```sh
-wget -N --no-check-certificate https://raw.githubusercontent.com/phlinhng/v2ray-caddy-cf/master/v2.sh \
-&& chmod +x v2.sh \
-&& ./v2.sh [domain] [path] [cloudflare email] [cloudflare api key]
+wget -N --no-check-certificate https://raw.githubusercontent.com/phlinhng/v2ray-caddy-cf/master/v2.sh && chmod +x v2.sh && ./v2.sh [domain] [path] [cloudflare email] [cloudflare api key]
 ```
 ## 更新 v2Ray
 ```sh

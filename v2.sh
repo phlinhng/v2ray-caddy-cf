@@ -18,7 +18,7 @@ bash <(curl -L -s https://install.direct/go.sh)
 # install caddy
 curl https://getcaddy.com | bash -s personal tls.dns.cloudflare
 
-rm -rf docker-v2ray-caddy-cf
+rm -rf v2ray-caddy-cf
 git clone https://github.com/phlinhng/v2ray-caddy-cf.git
 cd v2ray-caddy-cf
 

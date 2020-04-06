@@ -15,9 +15,9 @@ read -p "v2Ray ws路径: " path
 read -p "Cloudflare Email: " cfemail
 read -p "Cloudflare API KEY: " cfapikey
 
-rm -rf docker-v2ray-caddy-cf
-git clone https://github.com/phlinhng/docker-v2ray-caddy-cf.git
-cd docker-v2ray-caddy-cf
+rm -rf v2ray-caddy-cf
+git clone https://github.com/phlinhng/v2ray-caddy-cf.git
+cd v2ray-caddy-cf
 git checkout docker
 
 uuid=$(uuidgen)
@@ -42,6 +42,6 @@ echo ""
 json="{\"add\":\"${domain}\",\"aid\":\"6\",\"host\":\"${domain}\",\"id\":\"${uuid}\",\"net\":\"ws\",\"path\":\"/${path}\",\"port\":\"443\",\"ps\":\"${domain}:443\",\"tls\":\"tls\",\"type\":\"none\",\"v\":\"2\"}"
 
 uri="$(echo "${json}" | base64)"
-echo -"vmess://${uri}"
+echo -n "vmess://${uri}"
 
 exit 0

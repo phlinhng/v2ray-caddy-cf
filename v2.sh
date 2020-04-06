@@ -74,7 +74,7 @@ systemctl enable caddy
 systemctl start caddy
 
 cd ..
-rm -rf docker-v2ray-caddy-cf
+rm -rf v2ray-caddy-cf
 
 echo ""
 echo "Address: ${V2_DOMAIN}"

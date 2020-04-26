@@ -62,8 +62,8 @@ chmod 644 /etc/caddy/Caddyfile
 chown root:root /etc/systemd/system/caddy.service
 chmod 644 /etc/systemd/system/caddy.service
 
-(crontab -l 2>/dev/null; echo "0 7 * * * wget -o /usr/bin/v2ray/geoip.dat https://github.com/Loyalsoldier/v2ray-rules-dat/blob/release/geoip.dat?raw=true >/dev/null >/dev/null") | crontab -
-(crontab -l 2>/dev/null; echo "0 7 * * * wget -o /usr/bin/v2ray/geosite.dat https://github.com/Loyalsoldier/v2ray-rules-dat/blob/release/geosite.dat?raw=true >/dev/null >/dev/null") | crontab -
+(crontab -l 2>/dev/null; echo "0 7 * * * wget -q https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geoip.dat -O /usr/bin/v2ray/geoip.dat >/dev/null >/dev/null") | crontab -
+(crontab -l 2>/dev/null; echo "0 7 * * * wget -q https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat -O /usr/bin/v2ray/geosite.dat >/dev/null >/dev/null") | crontab -
 
 systemctl daemon-reload
 

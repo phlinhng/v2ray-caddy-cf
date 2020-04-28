@@ -79,19 +79,20 @@ systemctl start caddy
 cd ..
 rm -rf v2ray-caddy-cf
 
-echo ""
-echo "Address: ${V2_DOMAIN}"
-echo "Port: 443"
-echo "UUID: ${uuid}"
-echo "Alter ID: 0"
-echo "Type: websocket"
-echo "Hostname: ${V2_DOMAIN}"
-echo "Path: /${V2_PATH}"
-echo ""
+printf ""
+printf "Address: ${V2_DOMAIN}"
+printf "Port: 443"
+printf "UUID: ${uuid}"
+printf "Alter ID: 0"
+printf "Type: websocket"
+printf "Hostname: ${V2_DOMAIN}"
+printf "Path: /${V2_PATH}"
+printf ""
 
 json="{\"add\":\"${V2_DOMAIN}\",\"aid\":\"0\",\"host\":\"${V2_DOMAIN}\",\"id\":\"${uuid}\",\"net\":\"ws\",\"path\":\"/${V2_PATH}\",\"port\":\"443\",\"ps\":\"${V2_DOMAIN}:443\",\"tls\":\"tls\",\"type\":\"none\",\"v\":\"2\"}"
 
-uri="$(echo "${json}" | base64)"
+uri="$(printf "${json}" | base64)"
 printf "vmess://${uri}"
+printf "\n"
 
 exit 0

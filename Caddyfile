@@ -5,7 +5,9 @@
 FAKEDOMAIN {
     gzip
     timeouts none
-    proxy / www.lse.ac.uk
+    proxy / www.lse.ac.uk {
+        except /FAKEPATH robots.txt
+    }
     proxy /FAKEPATH localhost:35666 {
         without /FAKEPATH
         websocket

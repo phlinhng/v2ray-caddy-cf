@@ -20,7 +20,7 @@ Cloudflare API KEY: a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a2
 Address: www.yourdomain.com
 Port: 443
 UUID: 13FB0A64-3BC8-4574-8D49-7121B04BDE83
-Alter ID: 6
+Alter ID: 0
 Type: websocket
 Hostname: www.yourdomain.com
 Path: /yourpath

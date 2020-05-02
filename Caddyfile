@@ -1,5 +1,5 @@
 :80 {
-    redir https://FAKEDOMAIN
+    redir https://FAKEDOMAIN{uri}
 }
 
 FAKEDOMAIN {

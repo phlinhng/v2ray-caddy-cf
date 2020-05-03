@@ -6,7 +6,7 @@ if [[ $(/usr/bin/id -u) -ne 0 ]]; then
 fi
 
 V2_DOMAIN=$1
-V2_PATH=(echo $2| tr -d '/')
+V2_PATH=$(echo $2| tr -d '/')
 CF_EMAIL=$3
 CF_APIKEY=$4
 

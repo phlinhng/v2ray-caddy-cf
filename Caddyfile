@@ -11,6 +11,7 @@ FAKEDOMAIN {
     proxy /FAKEPATH localhost:35666 {
         without /FAKEPATH
         websocket
+        transparent
     }
     tls {
         dns cloudflare

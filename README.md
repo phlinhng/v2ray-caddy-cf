@@ -1,5 +1,5 @@
-# v2Ray Caddy Cloudflare 一键脚本
-利用官方腳本实现的v2Ray干净一键脚本，集成Cloudflare API，无需手动点灰云朵也能自动获取证书。
+# V2Ray Caddy Cloudflare 一键脚本
+利用官方腳本实现的 V2Ray 干净一键脚本，集成 Cloudflare API，无需手动点灰云朵也能自动获取证书。
 
 ## [Docker 版](https://github.com/phlinhng/v2ray-caddy-cf/tree/docker)
 
